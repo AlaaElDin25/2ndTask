@@ -16,18 +16,18 @@ if Get_Brands_Req.status_code == 200:
         flag_all_valid=1
         for brand in Get_Brands_Res:
             if '_id' not in brand or 'name' not in brand:
-                print(f"Brand validation failed for: {brand}")
+                print('<p>f"Brand validation failed for: {brand}"</p>')
                 flag_all_valid = 0
             else:
                 pass
         if (flag_all_valid == 1):
-            print("Each brand object contains _id and name properties")
+            print('<p>"Each brand object contains _id and name properties"</p>')
         else:
-            print("Not every brand object contains _id and name properties")
+            print('<p>"Not every brand object contains _id and name properties"</p>')
     else:
-        print("List of brands has one entery or less")
+        print('<p>"List of brands has one entery or less"</p>')
 else:
-    print("status code is 422: cannot get brands")
+    print('<p>"status code is 422: cannot get brands"</p>')
 
 
 
@@ -40,14 +40,14 @@ Specific_ID_Get_URL = url + Specific_ID
 Get_Specific_ID_Req = requests.get(Specific_ID_Get_URL)
 Get_Specific_ID_Res = Get_Specific_ID_Req.json()
 if Get_Specific_ID_Req.status_code == 200:
-    print("Status code is 200 success for ID: ", Specific_ID)
+    print('<p>"Status code is 200 success for ID: "</p>', Specific_ID)
     Brand_Name = Get_Specific_ID_Res.get('name')
     if (Brand_Name == Expected_Brand_Name):
-        print("Brand name of id: " +Specific_ID+ "is correct")
+        print('<p>"Brand name of id: "</p>' +Specific_ID+ "is correct")
     else:
-        print("Brand name of id: " +Specific_ID+ " is wrong")
+        print('<p>"Brand name of id: "</p>' +Specific_ID+ " is wrong")
 else:
-    print("Status code is not 200 success for ID: ", Specific_ID)
+    print('<p>"Status code is not 200 success for ID: "</p>', Specific_ID)
 
 
 
@@ -57,10 +57,10 @@ Post_Body = {'name': 'HE-MAN', 'description': 'Any'}
 Post_Request = requests.post(url, json = Post_Body)
 Post_Response= Post_Request.json()
 if Post_Request.status_code == 200:
-    print(Post_Response)
-    print("New Brand Added")
+    print('<p>Post_Response</p>')
+    print('<p>"New Brand Added"</p>')
 else:
-    print(Post_Response)
+    print('<p>Post_Response</p>')
 
  
 
