@@ -1,0 +1,16 @@
+create GitHub repo with the same name of the folder
+git bash here inside the folder
+git init
+git add file.py
+git commit -m "Initial commit with filename python file"
+git remote add origin https://github.com/username/foldername.git
+git push -u origin main OR git push -u origin master
+
+
+I got those errors
+
+build
+The following actions uses node12 which is deprecated and will be forced to run on node16: actions/setup-python@v2
+
+build
+The following actions use a deprecated Node.js version and will be forced to run on node20: actions/checkout@v3, actions/setup-python@v2
