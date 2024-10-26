@@ -3,10 +3,10 @@ name: Run Python Code and Generate Report
 on:
   push:
     branches:
-      - main  # Runs the workflow on push to main branch
+      - master  # Runs the workflow on push to main branch
   pull_request:
     branches:
-      - main  # Also runs the workflow on pull requests to main
+      - master  # Also runs the workflow on pull requests to main
 
 jobs:
   build:
@@ -30,13 +30,13 @@ jobs:
 
       # Step 4: Run the Python script
       - name: Run Python Code
-        run: python your_script.py  # Replace with your Python file name
+        run: python SecondTaskV2.py  # Replace with your Python file name
 
       # Step 5: Generate HTML Report
       - name: Generate HTML Report
         run: |
           mkdir -p artifacts
-          python your_script.py > artifacts/report.html  # Redirect output to an HTML file (customize as needed)
+          python SecondTaskV2.py > artifacts/report.html  # Redirect output to an HTML file (customize as needed)
 
       # Step 6: Upload the report as an artifact
       - name: Upload HTML Report
