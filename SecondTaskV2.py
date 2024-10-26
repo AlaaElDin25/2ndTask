@@ -37,7 +37,9 @@ else:
     print('<br>')
 
 
-
+print('<br>')
+print('<br>')
+print('<br>')
 
 
 print("\n")
@@ -48,14 +50,21 @@ Get_Specific_ID_Req = requests.get(Specific_ID_Get_URL)
 Get_Specific_ID_Res = Get_Specific_ID_Req.json()
 if Get_Specific_ID_Req.status_code == 200:
     print("Status code is 200 success for ID: ", Specific_ID)
+    print('<br>')
     Brand_Name = Get_Specific_ID_Res.get('name')
     if (Brand_Name == Expected_Brand_Name):
         print("Brand name of id: " +Specific_ID+ "is correct")
+        print('<br>')
     else:
         print("Brand name of id: " +Specific_ID+ " is wrong")
+        print('<br>')
 else:
     print("Status code is not 200 success for ID: ", Specific_ID)
+    print('<br>')
 
+print('<br>')
+print('<br>')
+print('<br>')
 
 
 
@@ -65,11 +74,18 @@ Post_Request = requests.post(url, json = Post_Body)
 Post_Response= Post_Request.json()
 if Post_Request.status_code == 200:
     print(Post_Response)
+    print('<br>')
     print("New Brand Added")
+    print('<br>')
 else:
     print(Post_Response)
+    print('<br>')
 
- 
+
+
+print('<br>')
+print('<br>')
+print('<br>')
 
 print("\n")
 Non_existent_id = "/6440965fbf61a969820eb749QQQQQQQAAAAAA"
@@ -79,12 +95,19 @@ Non_existent_Res = Non_existent_Req.json()
 Err_Desc = Non_existent_Res.get('error')
 if (Err_Desc == 'Unable to fetch brand') or (Non_existent_Req.status_code != 200):
     print("Appropriate error, Brand with ID:" +Non_existent_id+ " does not exist")
+    print('<br>')
 elif (Non_existent_Req.status_code == 200):
     print("Brand with ID:" +Non_existent_id+ " exists")
+    print('<br>')
 else:
     print(Err_Desc)
+    print('<br>')
 
 
+
+print('<br>')
+print('<br>')
+print('<br>')
 
 
 
@@ -96,13 +119,19 @@ Delete_Res = Delete_Req.json()
 Del_Err_Desc = Delete_Res.get('error')
 if (Del_Err_Desc == 'Unable to delete brand') or (Delete_Req.status_code != 200):
     print("Cannot fulfill delete request with ID:" +Delete_ID+ " ,Brand does not exist")
+    print('<br>')
 elif (Delete_Req.status_code == 200):
     print("Brand with ID:" +Delete_ID+ " deleted")
+    print('<br>')
 else:
     print(Del_Err_Desc)
+    print('<br>')
 
 
 
+print('<br>')
+print('<br>')
+print('<br>')
 
 
 print("\n")
@@ -114,8 +143,12 @@ put_response= put_request.json()
 put_err_desc = put_response.get('error')
 if (put_err_desc == 'Unable to update brands') or (put_request.status_code != 200):
     print(put_err_desc)
+    print('<br>')
     print("Brand with ID: " +Update_ID+ " does not exist")
+    print('<br>')
 elif (put_request.status_code == 200):
     print("Brand with ID: " +Update_ID+ " updated")
+    print('<br>')
 else:
     print(put_err_desc)
+    print('<br>')
