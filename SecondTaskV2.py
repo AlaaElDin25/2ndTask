@@ -11,30 +11,30 @@ Get_Brands_Req = requests.get(url)
 Get_Brands_Res = Get_Brands_Req.json()
 if Get_Brands_Req.status_code == 200:
     print("Status code for get brands is 200: success")
-    print(<br>)
+    print('<br>')
     if (len(Get_Brands_Res) > 1):
         print("List of brands has more than one entery")
-        print(<br>)
+        print('<br>')
         flag_all_valid=1
         for brand in Get_Brands_Res:
             if '_id' not in brand or 'name' not in brand:
                 print(f"Brand validation failed for: {brand}")
-                print(<br>)
+                print('<br>')
                 flag_all_valid = 0
             else:
                 pass
         if (flag_all_valid == 1):
             print("Each brand object contains _id and name properties")
-            print(<br>)
+            print('<br>')
         else:
             print("Not every brand object contains _id and name properties")
-            print(<br>)
+            print('<br>')
     else:
         print("List of brands has one entery or less")
-        print(<br>)
+        print('<br>')
 else:
     print("status code is 422: cannot get brands")
-    print(<br>)
+    print('<br>')
 
 
 
